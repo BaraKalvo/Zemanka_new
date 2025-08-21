@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+
     <title>Zemanka|Domů</title>
 </head>
+
 <body>
-    <header>
+    <header class="header">
         <div class="header-content">
-            <a href="#">
-                <img class="header-logo" src="images/logo.svg" alt="Logo Zemanky, lotosový květ" />
-            </a>
+            <!-- logo -->
+            <div class="header-logo">
+                <a href="#">
+                    <img class="header-logo-image" src="images/logo.svg" alt="Logo Zemanky, lotosový květ" />
+                </a>
+            </div>
 
-            <nav>
-                <div class="nav-body">
-                    <ul class="menu">
-                        <li class="menu-item">Domů</li>
-                        <li class="menu-item">Lidé Zemanky</li>
-                        <li class="menu-item">Pravidelné lekce</li>
-                        <li class="menu-item">Pronájem</li>
-                        <li class="menu-item">Aktuality</li>
-                        <li class="menu-item">Kontakt</li>
-                    </ul>
+            <!-- navigace -->
+            <nav id="nav-body" class="nav-body">
+                <ul class="menu">
+                    <li class="menu-item"><a class="menu-link" href="#">Domů</a></li>
+                    <li class="menu-item"><a class="menu-link" href="#">Lidé Zemanky</a></li>
+                    <li class="menu-item"><a class="menu-link" href="#">Pravidelné lekce</a></li>
+                    <li class="menu-item"><a class="menu-link" href="#">Pronájem</a></li>
+                    <li class="menu-item"><a class="menu-link" href="#">Aktuality</a></li>
+                    <li class="menu-item"><a class="menu-link" href="#">Kontakt</a></li>
+                </ul>
 
-                    <ul class="menu-icons">
-                        <li class="menu-icon-item"><a href="#" target="_blank" rel="noreferrer noopener"><img src="images/facebook-icon.svg" alt="Ikona s logem facebooku" /></a></li>
-                        <li class="menu-icon-item"><a href="#" target="_blank" rel="noreferrer noopener"><img src="images/instagram-icon.svg" alt="Ikona s logem instagramu" /></a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-hamburger">
-                    <img src="images/menu-bar.png" alt="Ikonka menu" />
-                </div>
+                <ul class="menu menu-icons">
+                    <li class="menu-icon-item"><a class="menu-icons-link fb" href="#" target="_blank" rel="noreferrer noopener" aria-label="Zemanka na Facebooku"></a></li>
+                    <li class="menu-icon-item"><a class="menu-icons-link inst" href="#" target="_blank" rel="noreferrer noopener" aria-label="Zemanka na Instagramu"></a></li>
+                </ul>
             </nav>
+            
+            <!-- hamburger menu -->
+            <button class="nav-hamburger" type="button" aria-controls="nav-body" aria-expanded="false" aria-label="Otevřít menu">
+                <img class="nav-image hamburger" src="images/menu-bar.svg" alt="" />
+                <img class="nav-image close" src="images/close-icon.svg" alt="" />
+            </button>
         </div>
     </header>
 
@@ -103,6 +113,9 @@
         <p class="footer-text">+420 721 676 746</p>
         <p class="footer-text">zemanka.boskovice@gmail.com</p>
     </footer>
+
+
+    <script src="index.js"></script>
 
 </body>
 </html>

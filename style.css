@@ -4,3 +4,259 @@
     box-sizing: border-box;
 }
 
+/*font family 
+  font-family: "Readex Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>; */
+
+
+:root {
+    /* colors */
+    --color-primary-dark-blue: rgb(0, 103, 135); /* logo, menu, nadpisy h2 */
+    --color-primary-light-blue: rgb(75, 147, 169); /* tlačítko, footer */
+    --color-primary-pink: rgb(182, 146, 146); /* tlačítko */
+    --color-primary-pink-opacity8: rgb(164 119 119 / 80%); /* hero proužek */
+    --color-primary-pink-opacity5: rgb(164 119 119 / 50%); /* úvodní hero proužek */
+    --color-secondary-light: rgb(237 228 228 / 80%); /* rámečky ve fotkách osob */
+    --color-secondary-middle: rgb(160 144 144 / 60%); /* rámečky pravidelné lekce */ 
+    --color-secondary-dark: rgb(140 100 100 / 70%); /* tlačítko Kontaktuje nás */
+    --color-text: #3a3939;
+    --color-white: white;
+
+    /* spacing */
+    --spacing-xxs: 0.25rem;   /* 4px */
+    --spacing-xs:  0.5rem;    /* 8px */
+    --spacing-sm:  0.75rem;   /* 12px */
+    --spacing-md:  1rem;      /* 16px */
+    --spacing-lg:  1.5rem;    /* 24px */
+    --spacing-xl:  2rem;      /* 32px */
+    --spacing-xxl: 3rem;      /* 48px */
+    --spacing-xxxl: 4rem;     /* 64px */
+
+    /* font size */
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-md: 1.125rem;  /* 18px */
+    --font-size-lg: 1.25rem;   /* 20px */
+    --font-size-xl: 1.5rem;    /* 24px */
+    --font-size-xxl: 2rem;     /* 32px */
+    --font-size-xxxl: 2.5rem;  /* 40px */
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    font-family: "Readex Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    color: var(--color-text);
+    font-size: var(--font-size-sm); /*pro mobil*/
+}
+
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+}
+
+.header-logo {
+    max-width: 5rem;
+}
+
+.header-logo-image {
+    width: 100%;
+}
+
+/* --- navigation bar for mobile device --- */ 
+
+.nav-body {
+    width: 100%;
+    max-width: 30rem;
+    background-color: var(--color-secondary-light); /*dořešit ještě opacity - pokud tady tu barvu nechám */
+}
+
+.nav-body {
+    position: absolute;
+    top: 70%;
+    right: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 100;
+}
+
+.nav-body.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-item {
+    list-style: none;
+    padding-block: var(--spacing-sm);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-link {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: var(--font-size-base);
+    color: var(--color-primary-dark-blue);
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover,
+.menu-item:active,
+.menu-item:focus-visible {
+    background-color: var(--color-primary-pink-opacity8);
+}
+
+.menu-item:hover .menu-link,
+.menu-item:active .menu-link,
+.menu-item:focus-visible .menu-link {
+    color: white;
+}
+
+/* --- fb and inst icons --- */
+
+.menu-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.menu-icon-item {
+    list-style: none;
+    padding-block: var(--spacing-sm);
+}
+
+.menu-icons-link {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: background-url 0.5s ease;
+}
+
+.fb {
+    background-image: url(images/facebook-icon.svg);
+}
+
+.inst {
+    background-image: url(images/instagram-icon.svg);
+}
+
+.fb:hover,
+.fb:active,
+.fb:focus-visible {
+    background-image: url(images/facebook-icon-pink.svg);
+}
+
+.inst:hover,
+.inst:active,
+.inst:focus-visible {
+    background-image: url(images/instagram-icon-pink.svg);
+}
+
+/* --- hamburger icon + toggle --- */
+
+.nav-hamburger {
+    position: relative;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.nav-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.nav-image.hamburger {
+    opacity: 1;
+}
+
+.nav-hamburger.is-active .nav-image.hamburger {
+    opacity: 0;
+}
+
+.nav-hamburger.is-active .nav-image.close {
+    opacity: 1;
+}
+
+/* hero section homepage */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: var(--spacing-md);
+    min-height: 70vh;
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.hero-text {
+    background-color: var(--color-primary-pink-opacity5);
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    letter-spacing: 0.06em;
+}
+
+
+/* --- zákaz animací a efektů
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}*/
