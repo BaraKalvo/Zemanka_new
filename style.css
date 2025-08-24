@@ -20,8 +20,9 @@
     /*--color-primary-light-blue: rgb(75, 147, 169); /* tlačítko, footer DOŘEŠIT BARVU FOOTERU S*/
     --color-primary-light-blue: rgb(90, 150, 168); /*tlačítko */
     --color-primary-dark-blue-opacity8: rgb(30 120 148 / 80%); /*tlačítko hero */
-    --color-primary-pink: rgb(182, 146, 146); /* tlačítko */
-    --color-primary-pink-opacity8: rgb(164 119 119 / 80%); /* hero proužek */
+    --color-primary-pink: rgb(192, 163, 163); /* tlačítko)*/
+    --color-primary-pink-lighter: rgb(207, 190, 190);
+    --color-primary-pink-opacity8: rgb(164 119 119 / 80%); /* hero proužek - dořešit barvu - pink bez op jsem měnila */
     --color-primary-pink-opacity5: rgb(164 119 119 / 50%); /* úvodní hero proužek */
     --color-secondary-light: rgb(237 228 228 / 80%); /* rámečky ve fotkách osob */
     --color-secondary-middle: rgb(160 144 144 / 60%); /* rámečky pravidelné lekce */ 
@@ -29,6 +30,7 @@
     --color-text: #3a3939;
     --color-white: white;
     --color-blue-hover: rgb(84, 135, 150);
+    --color-background: rgb(253, 249, 250); 
 
     /* spacing */
     --spacing-xxs: 0.25rem;   /* 4px */
@@ -65,6 +67,8 @@ body {
     color: var(--color-text);
     font-size: var(--font-size-sm); /*pro mobil*/
     line-height: 1.4;
+    background-color: var(--color-background);
+    
 }
 
 .container-width {
@@ -74,13 +78,15 @@ body {
     padding: var(--spacing-md);
 }
 
-.container-width--larger {
-    max-width: 92.5rem;
-}
-
 .container-width--smaller {
     max-width: 56rem;
 } /* DOŘEŠIT VELIKOSTI */
+
+.size {
+    max-width: 75rem;
+    background-color: var(--color-white);
+    margin-inline: auto;
+}
 
 .padding-bottom-small {
     padding-bottom: var(--spacing-md);
@@ -88,6 +94,10 @@ body {
 
 .padding-bottom-large {
     padding-bottom: var(--spacing-xl);
+}
+
+.padding-bottom-xl {
+    padding-bottom: var(--spacing-xxxl);
 }
 
 .button {
@@ -170,13 +180,13 @@ body {
 }
 
 .person-contact-wrapper {
+    padding-block: var(--spacing-xxs);
     width: 100%;
     max-width: 25rem;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
     background-color: var(--color-secondary-light);
     border-radius: 0 0 5px 5px;
 }
@@ -188,6 +198,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: var(--spacing-xs);
+    line-height: 1;
 }
 
 .visually-hidden {
@@ -214,12 +225,14 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 75rem;
+    max-width: 82.5rem;
     margin-inline: auto;
     padding: var(--spacing-md);
+    background-color: var(--color-white);
 }
 
 .header-logo {
+    min-width: 4rem;
     max-width: 5rem;
 }
 
@@ -230,14 +243,12 @@ body {
 /* === NAVIGATION FOR MOBILE DEVICE === */ 
 
 .nav-body {
-    width: 100%;
-    max-width: 40rem;
-    background-color: var(--color-secondary-light); /*dořešit ještě opacity - pokud tady tu barvu nechám */
-}
-
-.nav-body {
     position: absolute;
     visibility: hidden;
+
+    width: 100%;
+    max-width: 40rem;
+
     top: 70%;
     right: 0;
     opacity: 0;
@@ -245,6 +256,8 @@ body {
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 100;
+
+    background-color: var(--color-secondary-light);
 }
 
 .nav-body.is-open {
@@ -267,6 +280,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.menu-item.active {
+    background-color: var(--color-primary-pink);
+}
+
 .menu-link {
     display: inline-block;
     text-decoration: none;
@@ -275,6 +292,10 @@ body {
     font-size: var(--font-size-base);
     color: var(--color-primary-dark-blue);
     transition: color 0.3s ease;
+}
+
+.menu-link.active {
+    color: var(--color-white);
 }
 
 .menu-item:hover,
@@ -295,6 +316,7 @@ body {
     display: flex;
     gap: var(--spacing-sm);
     justify-content: center;
+    align-items: center;
 }
 
 .menu-icon-item {
@@ -383,7 +405,7 @@ body {
 
 .hero-content {
     width: 100%;
-    max-width: 75rem;
+    max-width: 82.5rem;
     margin-inline: auto;
     padding: var(--spacing-md);
 }
@@ -431,7 +453,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: var(--spacing-md);
-    margin-top: var(--spacing-xxl);
     padding: var(--spacing-md);
     background-color: var(--color-primary-light-blue);
 }
@@ -477,10 +498,99 @@ body {
     }
 }
 
+/* HERO BUTTON POSITION - 820px */
+
+@media screen and (min-width: 51.25rem) {
+    
+    .hero-content {
+        padding: var(--spacing-xl);
+    }
+
+    .hero-text {
+        font-size: var(--font-size-lg);
+    }
+
+    .position-change {
+        text-align: left;
+    }
+}
+
+/* === DESKTOP - min width 1024px ===  */
+
+@media screen and (min-width: 64rem) {
+    
+    body {
+        font-size: var(--font-size-md);
+    }
+
+    .header-content {
+        gap: var(--spacing-xl);
+    }
+
+    .nav-body {
+        position: static;
+        visibility: visible;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+
+        width: auto;
+        max-width: 65rem;
+
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+
+        background-color: var(--color-white);
+    }
+
+    .menu {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+    }
+
+    .menu-item {
+        padding-block: var(--spacing-xs);
+        padding-inline: var(--spacing-lg);
+        border-radius: 5px;
+    }
+
+    .menu-icons {
+        flex: 0;
+        margin-left: var(--spacing-sm);
+    }
+
+    .menu-item:hover,
+    .menu-item:active,
+    .menu-item:focus-visible {
+        background-color: var(--color-primary-pink-lighter);
+    }
 
 
+/* === HAMBURGER ICON + TOGGLE === */
 
+    .nav-hamburger {
+        display: none;
+    }
+}
 
+/* DESKTOP EXTRA LARGE - od 1600px */
+
+@media screen and (min-width: 100rem) {
+
+    .header-content {
+        padding-inline: var(--spacing-xxxl)
+    }
+
+}
 
 /* --- zákaz animací a efektů
 
