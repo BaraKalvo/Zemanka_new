@@ -305,41 +305,32 @@ body {
 
 .menu-item {
     list-style: none;
-    padding-block: var(--spacing-sm);
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.menu-item.active {
-    background-color: var(--color-primary-pink);
-    box-shadow: 0 0.5rem 1rem rgba(160, 144, 144, 0.3);
 }
 
 .menu-link {
-    display: inline-block;
+    display: block;
+    padding-block: var(--spacing-sm);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 400;
     font-size: var(--font-size-base);
     color: var(--color-primary-dark-blue);
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-link.active {
+    background-color: var(--color-primary-pink);
     color: var(--color-white);
-}
-
-.menu-item:hover,
-.menu-item:active,
-.menu-item:focus-visible {
-    background-color: var(--color-primary-pink-opacity3);
     box-shadow: 0 0.5rem 1rem rgba(160, 144, 144, 0.3);
+    
 }
 
-.menu-item:hover .menu-link,
-.menu-item:active .menu-link,
-.menu-item:focus-visible .menu-link {
+.menu-link:hover,
+.menu-link:active,
+.menu-link:focus-visible {
+    background-color: var(--color-primary-pink-opacity3);
     color: var(--color-white);
+    box-shadow: 0 0.5rem 1rem rgba(160, 144, 144, 0.3);
 }
 
 /* === FB AND INST ICONS */
@@ -633,9 +624,13 @@ body {
     }
 
     .menu-item {
-        padding-block: var(--spacing-xs);
-        padding-inline: var(--spacing-lg);
         border-radius: 5px;
+    }
+
+    .menu-link {
+        border-radius: 5px;
+        padding-block: var(--spacing-sm);
+        padding-inline: var(--spacing-lg);
     }
 
     .menu-icons {
@@ -643,9 +638,9 @@ body {
         margin-left: var(--spacing-sm);
     }
 
-    .menu-item:hover,
-    .menu-item:active,
-    .menu-item:focus-visible {
+    .menu-link:hover,
+    .menu-link:active,
+    .menu-link:focus-visible {
         background-color: var(--color-primary-pink-lighter);
     }
 
@@ -674,15 +669,9 @@ body {
 
     .menu-link {
         font-size: var(--font-size-sm);
-    }
-
-    /*.header-content {
         padding-inline: var(--spacing-md);
-    }*/
-
-   .menu-item {
-    padding-inline: var(--spacing-md);
-   }
+    }
+   
 }
 
 
