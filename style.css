@@ -85,15 +85,11 @@ body {
   );
 }
 
-.container-width {
+.container-small {
     width: 100%;
-    max-width: 70rem;
+    max-width: 56rem;
     margin-inline: auto;
     padding: var(--spacing-md);
-}
-
-.container-width--smaller {
-    max-width: 56rem;
 }
 
 .size {
@@ -561,6 +557,10 @@ body {
     .section-title {
         font-size: var(--font-size-xl);
     }
+
+    .lotos {
+        background-size: 60% auto;
+    }
 }
 
 /* HERO BUTTON POSITION - 820px */
@@ -575,7 +575,7 @@ body {
         font-size: var(--font-size-lg);
     }
 
-    .position-change {
+    .button-left-md{
         text-align: left;
     }
 }
@@ -697,11 +697,9 @@ body {
 
 /* === POZNÁMKY ===
 
-- dořešit velikost paddingu na container-width pro větší zařízení - přes media zvýšit např. na lg
 - zeptat se Magdy, jestli chce nadpisy patkový, nebo ne
-- dořešit velikost fontu u mobilního zařízení
 - dořešit zavření menu při kliknutí kamkoliv do okna
-- dořešit responzivitu hero obrázku - omezit šířku obrázku a dát nějaké tmavě šedé background na celou řšířku viewportu?
-- dořešit klikatelnost buttonů - padding by měl být na <a>, ne na <li>!!!
+- dořešit responzivitu hero obrázku - omezit šířku obrázku a dát nějaké tmavě šedé background na celou šířku viewportu?
+- dořešit obsah Pravidelných lekcí - jestli tam bude pořád totéž (aktualizovat - podzim 2024 -> 2025,...)
 
 */
