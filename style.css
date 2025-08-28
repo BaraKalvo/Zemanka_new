@@ -26,6 +26,7 @@
     --color-primary-pink-opacity5: rgb(164 119 119 / 50%); /* úvodní hero proužek */
     --color-primary-pink-opacity3: rgb(164 119 119 / 35%);
     --color-secondary-light: rgb(237 228 228 / 80%); /* rámečky ve fotkách osob */
+    --color-secondary-light-opacity9: rgb(237 228 228 / 90%); /*pozadí v mobilní navigaci */
     --color-secondary-middle: rgb(160 144 144 / 60%); /* rámečky pravidelné lekce */ 
     --color-secondary-dark: rgb(140 100 100 / 70%); /* tlačítko Kontaktuje nás */
     --color-text: #3a3939;
@@ -72,6 +73,22 @@ body {
     background-color: var(--color-background);
 }
 
+.color-primary {
+    color: var(--color-primary-dark-blue);
+}
+
+.color-white {
+    color: var(--color-white);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.container-small {
+    width: 100%;
+    max-width: 56rem;
+    margin-inline: auto;
+    padding: var(--spacing-md);
+}
+
 .gradient-line {
   border: 0;
   height: 3px;
@@ -85,11 +102,9 @@ body {
   );
 }
 
-.container-small {
-    width: 100%;
-    max-width: 56rem;
-    margin-inline: auto;
-    padding: var(--spacing-md);
+.highlight {
+    color: var(--color-primary-dark-blue);
+    font-weight: 500;
 }
 
 .size {
@@ -140,6 +155,10 @@ body {
     background-color: var(--color-primary-light-blue);
 }
 
+.button--pink {
+    background-color: var(--color-primary-pink);
+}
+
 .button--small {
     padding: var(--spacing-sm);
     font-size: var(--font-size-sm);
@@ -175,7 +194,6 @@ body {
     font-optical-sizing: auto;
     font-weight: bold;
     text-align: center;
-    color: var(--color-primary-dark-blue);
     font-size: var(--font-size-lg);
     letter-spacing: 0.05em;
 }
@@ -283,7 +301,7 @@ body {
     transition: opacity 0.4s ease, transform 0.4s ease;
     z-index: 100;
 
-    background-color: var(--color-secondary-light);
+    background-color: var(--color-secondary-light-opacity9);
 }
 
 .nav-body.is-open {
@@ -529,6 +547,99 @@ body {
     color: var(--color-primary-dark-blue);
 }
 
+.person-contact-tel-mail {
+    color: var(--color-primary-dark-blue);
+    text-decoration: none;
+}
+
+/* === HERO SMALL - clases, contact etc. === */
+
+.hero-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-color: var(--color-secondary-light); /*dořešit barvu*/
+}
+
+.hero-small-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 82.5rem;
+    min-height: 50vh;
+
+    padding: var(--spacing-md);
+    background-image:  linear-gradient(
+      rgba(255, 255, 255, 0.7), 
+      rgba(255, 255, 255, 0.7)
+    ), url(images/logo-rose.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: var(--color-white);
+}
+
+.hero-small-title {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-primary-dark-blue);
+    font-size: var(--font-size-xl);
+    letter-spacing: 0.05em;
+}
+
+/* === CLASSES BODY === */
+
+.classes-background {
+    width: 100%;
+    max-width: 82.5rem;
+    margin-inline: auto;
+
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7), 
+      rgba(255, 255, 255, 0.7)
+    ), url(images/classes-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container-classes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 40rem;
+    margin-inline: auto;
+    gap: var(--spacing-xxxl);
+}
+
+.classes-content {
+    background-color: var(--color-secondary-middle);
+    padding: var(--spacing-md);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+
+.classes-info-title {
+    margin-top: var(--spacing-xl);
+    color: var(--color-secondary-dark);
+
+}
+
+.classes-info-wrapper {
+    max-width: 82.5rem;
+    background-color: white;
+    margin-inline: auto;
+    padding-bottom: var(--spacing-xxxl);
+}
+
+
 
 /* === MEDIA QUERIES === */
 
@@ -541,7 +652,7 @@ body {
         line-height: 1.5;
     }
 
-    .container-width {
+    .container-small {
         padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xxl) var(--spacing-xl);
     }
 
@@ -561,6 +672,26 @@ body {
     .lotos {
         background-size: 60% auto;
     }
+
+    .hero-small,
+    .hero-small-content {
+        min-height: 60vh;
+    }
+
+    .hero-small-title{
+        font-size: var(--font-size-xxl);
+    }
+
+    .classes-content {
+        border-radius: 0 0 5px 5px;
+        padding-inline: var(--spacing-xxl);
+        padding-block: var(--spacing-xl);
+    }
+
+    .section-title.color-white {
+        margin-block: 0 var(--spacing-lg);
+    }
+
 }
 
 /* HERO BUTTON POSITION - 820px */
@@ -661,6 +792,46 @@ body {
     .nav-hamburger {
         display: none;
     }
+
+/* === CLASSES CARDS - HOVER EFFECT === */
+
+     .container-classes {
+        max-width: 82.5rem;
+        display: block;
+        column-count: 2;
+        gap: 2rem;
+     
+    }
+
+    .classes-content {
+        max-width: 40rem;
+        break-inside: avoid;
+        margin-bottom: var(--spacing-xxxl);
+        margin-inline: auto;
+
+        font-size: var(--font-size-base);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+ 
+    .classes-content:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .offset::before {
+        content: "";
+        display: block;
+        height: 8rem;   
+    }
+
+    /* === BUTTON HERO SMALL === */
+
+    .button--small-lg {
+        padding-inline: var(--spacing-lg);
+        font-size: var(--font-size-md);
+    }
+
+
 }
 
 /* NAVIGATION FOR SMALLER DESKTOP - 1024px - 1200px */
@@ -683,7 +854,42 @@ body {
         padding-inline: var(--spacing-xxxl)
     }
 
-}
+    .classes-background {
+        max-width: 90rem;
+    }
+
+    .container-classes {
+        max-width: 90rem;
+        gap: 6rem;
+    }
+
+    .classes-content {
+        max-width: 42rem;
+    }
+
+    .header-content {
+        max-width: 90rem;
+    }
+
+    .hero-small-content {
+        max-width: 90rem;
+    }
+
+    .classes-info-wrapper {
+        max-width: 90rem;
+    
+    }
+
+    .classes-info-desktop-lg {
+        max-width: 70rem;
+    }
+
+    .classes-flex {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-xxl);
+    }
+
 
 /* --- zákaz animací a efektů
 
@@ -697,9 +903,7 @@ body {
 
 /* === POZNÁMKY ===
 
-- zeptat se Magdy, jestli chce nadpisy patkový, nebo ne
 - dořešit zavření menu při kliknutí kamkoliv do okna
 - dořešit responzivitu hero obrázku - omezit šířku obrázku a dát nějaké tmavě šedé background na celou šířku viewportu?
-- dořešit obsah Pravidelných lekcí - jestli tam bude pořád totéž (aktualizovat - podzim 2024 -> 2025,...)
-
+- do úvodní stránky doplnit info o JÓGOVÉM POBYTU + proklik do aktualit
 */
