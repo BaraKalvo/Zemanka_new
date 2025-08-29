@@ -649,6 +649,51 @@ body {
 }
 
 
+/* === HERO SMALL CONTACT === */
+
+    .hero-container-small {
+        width: 100%;
+        max-width: 50rem;
+        margin-inline: auto;
+        padding: var(--spacing-md);
+        
+    }
+
+    .hero-small-contact {
+        margin-bottom: var(--spacing-xl);
+        text-align: center;
+        color: var(--color-primary-dark-blue);
+        font-size: var(--font-size-base);
+        font-weight: 400;
+    }
+
+    .hero-contact-tel,
+    .hero-contact-mail {
+        color: var(--color-primary-light-blue);
+    }
+
+    .hero-contact-tel {
+        text-decoration: none;
+    }
+
+/* === MAP CONTACT === */
+
+    .map-wrapper {
+        padding: var(--spacing-md);
+        text-align: center;
+    }
+
+    .map {
+        width: 100%;
+    }
+
+    .pattern-wrapper {
+        max-width: 82.5rem;
+        background-color: var(--color-white);
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23cfbebe' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E");
+        margin-inline: auto;
+    }
+
 
 /* === MEDIA QUERIES === */
 
@@ -699,6 +744,10 @@ body {
 
     .section-title.color-white {
         margin-block: 0 var(--spacing-lg);
+    }
+
+    .hero-small-contact {
+        font-size: var(--font-size-md);
     }
 
 }
@@ -841,6 +890,7 @@ body {
     }
 
 
+
 }
 
 /* NAVIGATION FOR SMALLER DESKTOP - 1024px - 1200px */
@@ -884,6 +934,10 @@ body {
         max-width: 90rem;
     }
 
+    .hero-small-contact {
+        font-size: var(--font-size-lg);
+    }
+
     .classes-info-wrapper {
         max-width: 90rem;
     
@@ -899,6 +953,10 @@ body {
         gap: var(--spacing-xxl);
     }
 
+    .pattern-wrapper {
+        max-width: 90rem;
+    }
+}
 
 /* --- zákaz animací a efektů
 
@@ -916,4 +974,5 @@ body {
 - dořešit responzivitu hero obrázku - omezit šířku obrázku a dát nějaké tmavě šedé background na celou šířku viewportu?
 - do úvodní stránky doplnit info o JÓGOVÉM POBYTU + proklik do aktualit
 - u desktopu dát navigaci stick?
+- dořešit backgroundy 
 */
