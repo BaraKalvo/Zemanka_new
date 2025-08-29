@@ -502,6 +502,15 @@ body {
     width: 80px;
 }
 
+.footer-tel,
+.footer-mail {
+    color: var(--color-white);
+}
+
+.footer-tel {
+    text-decoration: none;
+}
+
 
 /* === HERO SECTION PEOPLE === */
 
@@ -906,4 +915,5 @@ body {
 - dořešit zavření menu při kliknutí kamkoliv do okna
 - dořešit responzivitu hero obrázku - omezit šířku obrázku a dát nějaké tmavě šedé background na celou šířku viewportu?
 - do úvodní stránky doplnit info o JÓGOVÉM POBYTU + proklik do aktualit
+- u desktopu dát navigaci stick?
 */
