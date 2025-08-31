@@ -28,7 +28,8 @@
     --color-secondary-light: rgb(237 228 228 / 80%); /* rámečky ve fotkách osob */
     --color-secondary-light-opacity9: rgb(237 228 228 / 90%); /*pozadí v mobilní navigaci */
     --color-secondary-middle: rgb(160 144 144 / 60%); /* rámečky pravidelné lekce */ 
-    --color-secondary-dark: rgb(140 100 100 / 70%); /* tlačítko Kontaktuje nás */
+    --color-secondary-dark: rgb(175, 147, 147); /* tlačítko Kontaktuje nás */
+    --color-secondary-dark-hover: rgb(138, 112, 112); 
     --color-text: #3a3939;
     --color-white: white;
     --color-blue-hover: rgb(84, 135, 150);
@@ -60,7 +61,6 @@ html, body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-
 
 body {
     margin: 0;
@@ -107,6 +107,12 @@ body {
     font-weight: 500;
 }
 
+.highlight-pink {
+    color: var(--color-secondary-dark);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
 .size {
     max-width: 70rem;
     background-color: var(--color-white);
@@ -143,6 +149,11 @@ body {
 .button.button--blue {
     transition: all 0.3s ease;
 }
+
+.button.button--pink {
+    transition: all 0.3s ease;
+}
+
 .button-right {
     text-align: right;
 }
@@ -176,6 +187,12 @@ body {
 .button.button--blue:focus-visible {
     box-shadow: 0 0.5rem 1rem rgba(160, 144, 144, 0.3);
     background-color: var(--color-blue-hover);
+}
+
+.button.button--pink:hover,
+.button.button--pink:active,
+.button.button--pink:focus-visible {
+    background-color: var(--color-secondary-dark);
 }
 
 .lotos {
@@ -456,6 +473,58 @@ body {
     border-radius: 5px;
 }
 
+/* === EVENT === */
+
+.event-container {
+    max-width: 70rem;
+    background-color: var(--color-white);
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23cfbebe' fill-opacity='0.5' fill-rule='evenodd'/%3E%3C/svg%3E");
+    margin-inline: auto;
+    padding: var(--spacing-lg);
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1.5s ease-out;
+}
+
+.event-container.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.event-content {
+    margin-inline: auto;
+    padding: var(--spacing-xxs) var(--spacing-lg);
+    max-width: 56rem;
+    background-color: rgb(255 255 255 / 70%);
+    border-radius: 10px;
+    box-shadow: 0 0.3rem 1rem rgba(160, 144, 144, 0.2);
+}
+
+.event-text-bold {
+    font-weight: 400;
+    color: var(--color-primary-dark-blue);
+}
+
+.event-link {
+    text-decoration: none;
+}
+
+.event-link:hover,
+.event-link:active,
+.event-link:focus-visible {
+    color: var(--color-secondary-dark-hover);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 /* === BACKGROUND IMAGE DECORATION === */
 

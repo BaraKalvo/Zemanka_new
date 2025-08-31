@@ -17,3 +17,20 @@ linksToCloseMenu.forEach(link => {
         navToggle.setAttribute('aria-label', 'Otevřít menu');
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const intersectionObserver = new IntersectionObserver ( (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {threshold: 0.1}
+    )
+    const banner = document.querySelector('.event-container');
+    if (banner) {
+        intersectionObserver.observe(banner)
+    };
+});
