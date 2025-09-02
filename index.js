@@ -9,13 +9,24 @@ navToggle.addEventListener('click', () => {
     navToggle.setAttribute('aria-label', isOpen ? 'Zavřít menu' : 'Otevřít menu');
 })
 
+const closeMenu = () => {
+    navBody.classList.remove('is-open');
+    navToggle.classList.remove('is-active');
+    navToggle.setAttribute('aria-expanded', false);
+    navToggle.setAttribute('aria-label', 'Otevřít menu');
+}
+
 linksToCloseMenu.forEach(link => {
-    link.addEventListener('click', () => {
-        navBody.classList.remove('is-open');
-        navToggle.classList.remove('is-active');
-        navToggle.setAttribute('aria-expanded', false);
-        navToggle.setAttribute('aria-label', 'Otevřít menu');
-    });
+    link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('click', (event) => {
+    const clickOnMenu = navBody.contains(event.target);
+    const clickOnHamburger = navToggle.contains(event.target);
+
+    if (!clickOnMenu && !clickOnHamburger) {
+        closeMenu();
+    }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
