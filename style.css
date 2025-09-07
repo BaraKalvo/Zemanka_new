@@ -17,13 +17,11 @@
 :root {
     /* colors */
     --color-primary-dark-blue: rgb(0, 103, 135); /* logo, menu, nadpisy h2 */
-    /*--color-primary-light-blue: rgb(75, 147, 169); /* tlačítko, footer DOŘEŠIT BARVU FOOTERU S*/
-    --color-primary-light-blue: rgb(90, 150, 168); /*tlačítko */
+    --color-primary-light-blue: rgb(90, 150, 168); /*tlačítko, footer */
     --color-primary-dark-blue-opacity8: rgb(30 120 148 / 80%); /*tlačítko hero */
     --color-primary-pink: rgb(192, 163, 163); /* tlačítko)*/
     --color-primary-pink-lighter: rgb(207, 190, 190);
-    --color-primary-pink-opacity8: rgb(164 119 119 / 80%); /* hero proužek - dořešit barvu - pink bez op jsem měnila */
-    --color-primary-pink-opacity5: rgb(164 119 119 / 50%); /* úvodní hero proužek */
+    --color-primary-pink-opacity7: rgb(164 119 119 / 70%); /* úvodní hero proužek */
     --color-primary-pink-opacity3: rgb(164 119 119 / 35%);
     --color-secondary-light: rgb(237 228 228 / 80%); /* rámečky ve fotkách osob */
     --color-secondary-light-opacity9: rgb(237 228 228 / 90%); /*pozadí v mobilní navigaci */
@@ -160,6 +158,11 @@ body {
 
 .button--blue-opacity {
     background-color: var(--color-primary-dark-blue-opacity8);
+    transition: all 0.3s ease;
+}
+
+.button--blue-opacity:hover {
+    background-color: rgba(27, 100, 123, 0.8)
 }
 
 .button--blue {
@@ -459,14 +462,14 @@ body {
 
 .hero-content {
     width: 100%;
-    max-width: 82.5rem;
+    max-width: 75rem;
     margin-inline: auto;
     padding: var(--spacing-md);
 }
 
 .hero-text {
     padding: var(--spacing-md);
-    background-color: var(--color-primary-pink-opacity5);
+    background-color: var(--color-primary-pink-opacity7);
     color: var(--color-white);
     font-size: var(--font-size-md);
     letter-spacing: 0.05em;
@@ -535,7 +538,7 @@ body {
     background-color: var(--color-secondary-light);
     background-image: linear-gradient(
       rgba(255, 255, 255, 0.1), 
-      rgba(255, 255, 255, 0.1)), url(images/background-deco3.jpg);
+      rgba(255, 255, 255, 0.1)), url(images/background-deco.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -593,9 +596,16 @@ body {
     min-height: 70vh;
 }
 
+.hero-people-content {
+    width: 100%;
+    max-width: 82.5rem;
+    margin-inline: auto;
+    padding: var(--spacing-md);
+}
+
 .hero-people-title {
     padding: var(--spacing-md);
-    background-color: var(--color-primary-pink-opacity8);
+    background-color: var(--color-primary-pink-opacity7);
 
     font-family: "Lora", serif;
     font-optical-sizing: auto;
@@ -703,13 +713,13 @@ body {
     background-color: var(--color-secondary-middle);
     padding: var(--spacing-md);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
 .classes-info-title {
     margin-top: var(--spacing-xl);
     color: var(--color-secondary-dark);
-
 }
 
 .classes-info-wrapper {
@@ -765,6 +775,30 @@ body {
         margin-inline: auto;
     }
 
+/* === GALLERY FOR RENT === */ 
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 1rem;
+  padding: var(--spacing-md);
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+
 
 /* === MEDIA QUERIES === */
 
@@ -819,6 +853,10 @@ body {
 
     .hero-small-contact {
         font-size: var(--font-size-md);
+    }
+
+    .gallery {
+        padding: var(--spacing-lg);
     }
 
 }
@@ -939,14 +977,8 @@ body {
         margin-inline: auto;
 
         font-size: var(--font-size-base);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
  
-    .classes-content:hover {
-        transform: scale(1.03);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
     .offset::before {
         content: "";
         display: block;
@@ -1029,6 +1061,20 @@ body {
     }
 }
 
+/* HOVER for POINTER */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .classes-content:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .gallery-image:hover {
+        transform: scale(1.05);
+    }
+}
+
+
 /* --- zákaz animací a efektů
 
 @media (prefers-reduced-motion: reduce) {
@@ -1041,8 +1087,7 @@ body {
 
 /* === POZNÁMKY ===
 
-- dořešit responzivitu hero obrázku - omezit šířku obrázku a dát nějaké tmavě šedé background na celou šířku viewportu?
-- dořešit backgroundy
-- do aktualit doplnit letáček, až bude
-- posunout na hero text víc od levého kraje (pro xlarge monitory)?
+- do aktualit doplnit letáček
+- doplnit klubík do lekcí
+- doplnit vendy do medailonku
 */
