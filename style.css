@@ -31,7 +31,7 @@
     --color-text: #3a3939;
     --color-white: white;
     --color-blue-hover: rgb(84, 135, 150);
-    --color-background: rgb(253, 249, 250); 
+    --color-background: rgb(255, 248, 249); /*253 249 250*/
 
     /* spacing */
     --spacing-xxs: 0.25rem;   /* 4px */
@@ -199,6 +199,7 @@ body {
 }
 
 .lotos {
+    min-height: 17.5rem;
     background-image:  linear-gradient(
       rgba(255, 255, 255, 0.7), 
       rgba(255, 255, 255, 0.7)
@@ -296,6 +297,7 @@ body {
 }
 
 .header-logo {
+    display: block;
     min-width: 4rem;
     max-width: 5rem;
 }
@@ -890,7 +892,8 @@ body {
     .header-content {
         gap: var(--spacing-xl);
     }
-
+    
+    
     .nav-body {
         position: static;
         visibility: visible;
@@ -1088,4 +1091,8 @@ body {
 - do aktualit doplnit letáček
 - doplnit klubík do lekcí
 - doplnit vendy do medailonku
+- doplnit favicon
+- doplnit metapixel data!!!
+- vyměnit span za strong/em ? 
+
 */

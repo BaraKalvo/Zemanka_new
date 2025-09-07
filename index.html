@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vítá Vás Zemanka, prostor pro jógu, terapii a setkávání v Boskovicích. Najděte klid, podporu a cestu k sobě.">
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
 
-    <title>Zemanka|Domů</title>
+    <title>Zemanka | Domů</title>
 </head>
 
 <body>
     <header class="header">
         <div class="header-content">
             <!-- logo -->
-            <div class="header-logo">
-                <a href="/">
-                    <img class="header-logo-image" src="images/logo.svg" alt="Logo Zemanky, lotosový květ" />
-                </a>
-            </div>
+            <a href="/" class="header-logo" aria-label="Zpět na úvodní stránku">
+                <img class="header-logo-image" src="images/logo.svg" alt="Logo Zemanky, lotosový květ" />
+            </a>
+            
 
             <!-- navigace -->
             <nav id="nav-body" class="nav-body">
@@ -41,8 +41,8 @@
             
             <!-- hamburger menu -->
             <button class="nav-hamburger" type="button" aria-controls="nav-body" aria-expanded="false" aria-label="Otevřít menu">
-                <img class="nav-image hamburger" src="images/menu-bar.svg" alt="" />
-                <img class="nav-image close" src="images/close-icon.svg" alt="" />
+                <img class="nav-image hamburger" src="images/menu-bar.svg" alt="" role="presentation" />
+                <img class="nav-image close" src="images/close-icon.svg" alt="" role="presentation" />
             </button>
         </div>
     </header>
@@ -62,7 +62,7 @@
 
         <section class="event-container">
             <div class="event-content">
-                <p class="event-text-bold color-primary">Nenech si ujít náš <span class="highlight-pink">víkendový jógový pobyt 17.-19.10.</span> Načerpej energii, zhluboka se nadechni, prostě jen buď.</p>
+                <p class="event-text-bold color-primary">Nenech si ujít náš <strong class="highlight-pink">víkendový jógový pobyt 17.-19.10.</strong> Načerpej energii, zhluboka se nadechni, prostě jen buď.</p>
                 <p class="color-primary">Více informací najdeš v našich <a class="event-link highlight-pink" href="aktuality.html">Aktualitách</a> nebo přímo v <a class="event-link highlight-pink" href="https://zemankaboskovice.inrs.cz/rs/id/1953/jogovy-a-pohybovy-pobyt" target="_blank" rel="noreferrer noopener">rezervačním systému</a>.</p>
             </div>
         </section>
@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="section-image-wrapper">
-                        <img class="section-image" src="images/o-zemance-image.jpg" alt="" />
+                        <img class="section-image" src="images/o-zemance-image.jpg" alt="Dům, ve kterém sídlíme" loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -110,10 +110,10 @@
                     </div>
 
                     <div class="section-image-wrapper section-image-wrapper--position">
-                        <img class="section-image section-image--person" src="images/magda.jpg" alt="Fotografie Magdy Zemánkové" /> 
+                        <img class="section-image section-image--person" src="images/magda.jpg" alt="Fotografie Magdy Zemánkové" loading="lazy"/> 
                         <div class="person-contact-wrapper">
-                            <p class="person-contact"><img src="images/phone.svg" /><a class="person-contact-tel-mail" href="tel:+420721676746">+420 721 676 746</a></p>
-                            <p class="person-contact"><img src="images/email.svg" /><a class="person-contact-tel-mail" href="mailto:zemanka.boskovice@gmail.com">zemanka.boskovice@gmail.com</a></p>
+                            <p class="person-contact"><img src="images/phone.svg" alt=""/><a class="person-contact-tel-mail" href="tel:+420721676746">+420 721 676 746</a></p>
+                            <p class="person-contact"><img src="images/email.svg" alt=""/><a class="person-contact-tel-mail" href="mailto:zemanka.boskovice@gmail.com">zemanka.boskovice@gmail.com</a></p>
                         </div>
                     </div>
                 </div>
