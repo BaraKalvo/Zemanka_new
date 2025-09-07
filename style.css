@@ -1075,15 +1075,13 @@ body {
 }
 
 
-/* --- zákaz animací a efektů
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
   }
-}*/
+}
 
 /* === POZNÁMKY ===
 
