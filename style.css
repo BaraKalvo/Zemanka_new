@@ -25,7 +25,9 @@
     --color-primary-pink-opacity3: rgb(164 119 119 / 35%);
     --color-secondary-light: rgb(237 228 228 / 80%); /* rámečky ve fotkách osob */
     --color-secondary-light-opacity9: rgb(237 228 228 / 90%); /*pozadí v mobilní navigaci */
-    --color-secondary-middle: rgb(160 144 144 / 60%); /* rámečky pravidelné lekce */ 
+    --color-secondary-middle: rgb(160 144 144 / 60%); /* rámečky pravidelné lekce */
+    --color-secondary-middle-opacity9: rgb(160 144 144 / 90%);
+    --color-secondary-middle-hover: rgba(154, 138, 138, 0.9);
     --color-secondary-dark: rgb(175, 147, 147); /* tlačítko Kontaktuje nás */
     --color-secondary-dark-hover: rgb(138, 112, 112); 
     --color-text: #3a3939;
@@ -85,6 +87,7 @@ body {
     max-width: 56rem;
     margin-inline: auto;
     padding: var(--spacing-md);
+    text-align: center;
 }
 
 .gradient-line {
@@ -127,6 +130,10 @@ body {
 
 .padding-bottom-xl {
     padding-bottom: var(--spacing-xxxl);
+}
+
+.margin-top-small {
+    margin-top: var(--spacing-md);
 }
 
 .margin-top-large {
@@ -178,10 +185,15 @@ body {
     font-size: var(--font-size-sm);
 }
 
+.button--xs {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
 .button:hover,
 .button:active,
 .button:focus-visible {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.04);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
@@ -452,6 +464,7 @@ body {
 /* === HERO SECTION HOMEPAGE */
 
 .hero {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -476,6 +489,32 @@ body {
     font-size: var(--font-size-md);
     letter-spacing: 0.05em;
     border-radius: 5px;
+}
+
+.hero-lightbox {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+
+    background-color: var(--color-secondary-middle-opacity9);
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+}
+
+.hero-lightbox:hover,
+.hero-lightbox:active,
+.hero-lightbox:focus-visible {
+    background-color: var(--color-secondary-middle-hover);
+    transform: translateX(-50%) translateY(-2px) scale(1.03);
 }
 
 /* === EVENT === */
@@ -800,10 +839,32 @@ body {
   transition: transform 0.4s ease;
 }
 
+/* === NEWS === */
+
+.news-image {
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0.5rem 1rem rgba(160, 144, 144, 0.3);
+}
 
 
 /* === MEDIA QUERIES === */
 
+/* === MOBILE XS - max 400px === */
+
+@media screen and (max-width: 25rem) {
+    .hero-text {
+        font-size: var(--font-size-base);
+    }
+
+    .button {
+        font-size: var(--font-size-base);
+    }
+    
+    .hero-lightbox {
+        font-size: var(--font-size-sm);
+    }
+}
 /* === TABLET - min width 768px === */
 
 @media screen and (min-width: 48rem) {
@@ -841,6 +902,11 @@ body {
 
     .hero-small-title{
         font-size: var(--font-size-xxl);
+    }
+
+    .hero-lightbox {
+        padding-inline: var(--spacing-lg);
+        font-size: var(--font-size-md);
     }
 
     .classes-content {
@@ -945,6 +1011,10 @@ body {
         background-color: var(--color-primary-pink-lighter);
     }
 
+    .hero-lightbox {
+        font-size: var(--font-size-lg);
+    }
+
     .hero-people-title {
         font-size: var(--font-size-xxl);
     }
@@ -988,7 +1058,7 @@ body {
         height: 8rem;   
     }
 
-    /* === BUTTON HERO SMALL === */
+    /* === BUTTON HERO-SMALL === */
 
     .button--small-lg {
         padding-inline: var(--spacing-lg);
@@ -996,6 +1066,12 @@ body {
     }
 
 
+    /* === BUTTON ROZVRH === */ 
+
+    .button--xs {
+        padding-inline: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
 
 }
 
@@ -1072,9 +1148,11 @@ body {
         transform: scale(1.03);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
+
     .gallery-image:hover {
         transform: scale(1.05);
     }
+
 }
 
 
@@ -1085,14 +1163,3 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
-/* === POZNÁMKY ===
-
-- do aktualit doplnit letáček
-- doplnit klubík do lekcí
-- doplnit vendy do medailonku
-- doplnit favicon
-- doplnit metapixel data!!!
-- vyměnit span za strong/em ? 
-
-*/
