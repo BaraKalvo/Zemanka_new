@@ -87,6 +87,10 @@ body {
     max-width: 56rem;
     margin-inline: auto;
     padding: var(--spacing-md);
+    
+}
+
+.centered {
     text-align: center;
 }
 
@@ -150,6 +154,7 @@ body {
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .button.button--blue {
     transition: all 0.3s ease;
@@ -578,8 +583,8 @@ body {
     height: 60vh;
     background-color: var(--color-secondary-light);
     background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1), 
-      rgba(255, 255, 255, 0.1)), url(images/background-deco.jpg);
+      rgba(255, 255, 255, 0.2), 
+      rgba(255, 255, 255, 0.2)), url(images/background-deco.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -857,10 +862,10 @@ body {
         font-size: var(--font-size-base);
     }
 
-    .button {
+    .hero-button {
         font-size: var(--font-size-base);
     }
-    
+     
     .hero-lightbox {
         font-size: var(--font-size-sm);
     }
@@ -1154,7 +1159,6 @@ body {
     }
 
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   * {
