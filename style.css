@@ -583,13 +583,12 @@ body {
     height: 60vh;
     background-color: var(--color-secondary-light);
     background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2), 
-      rgba(255, 255, 255, 0.2)), url(images/background-deco.jpg);
+      rgba(255, 255, 255, 0.15), 
+      rgba(255, 255, 255, 0.15)), url(images/background-deco.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     filter: saturate(0.7);
-    
 }
 
 .opacity-decoration {
