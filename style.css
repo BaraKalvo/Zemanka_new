@@ -580,21 +580,20 @@ body {
 .background-decoration {
     width: 100%;
     max-width: 100vw;
-    height: 60vh;
+    height: 40vh;  /* menší výška pro mobily a tablety */
     background-color: var(--color-secondary-light);
     background-image: linear-gradient(
       rgba(255, 255, 255, 0.15), 
-      rgba(255, 255, 255, 0.15)), url(images/background-deco.jpg);
+      rgba(255, 255, 255, 0.15)), url(images/background-deco-mobile.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     filter: saturate(0.7);
 }
 
 .opacity-decoration {
     width: 100%;
     max-width: 100vw;
-    height: 20vh;
+    height: 15vh;
     background-color: var(--color-secondary-light);
 }
 
@@ -694,7 +693,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 50vh;
-    background-color: var(--color-secondary-light); /*dořešit barvu*/
+    background-color: var(--color-secondary-light);
 }
 
 .hero-small-content {
@@ -899,6 +898,10 @@ body {
         background-size: 60% auto;
     }
 
+    .background-decoration {
+        height: 50vh;
+    }
+
     .hero-small,
     .hero-small-content {
         min-height: 60vh;
@@ -930,9 +933,23 @@ body {
     .gallery {
         padding: var(--spacing-lg);
     }
-
 }
 
+/* === DESKTOP - min width 1024px ===  */
+
+@media screen and (min-width: 64rem) {
+    .background-decoration {
+        height: 60vh;  /* větší výška pro desktop s parallax efektem */
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.15), 
+            rgba(255, 255, 255, 0.15)), url(images/background-deco.jpg);
+        background-attachment: fixed;
+    }
+
+    .opacity-decoration {
+        height: 20vh; /* větší průsvitná část na desktopu */
+    }
+}
 /* HERO BUTTON POSITION - 820px */
 
 @media screen and (min-width: 51.25rem) {
@@ -1160,6 +1177,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   * {
     animation: none !important;
     transition: none !important;
