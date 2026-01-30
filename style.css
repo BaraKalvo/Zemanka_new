@@ -157,6 +157,18 @@ body {
 
 .hero-button {
     text-transform: uppercase;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    box-shadow: 0 4px 15px rgba(0, 103, 135, 0.3), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.hero-button:hover,
+.hero-button:active,
+.hero-button:focus-visible {
+    background-color: rgba(27, 100, 123, 1);
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 6px 20px rgba(0, 103, 135, 0.4), 0 0 35px rgba(255, 255, 255, 0.3);
 }
 
 .button.button--blue {
@@ -967,6 +979,10 @@ body {
 
     .button-left-md{
         text-align: left;
+    }
+
+    .hero-button {
+        padding: var(--spacing-md) var(--spacing-xl);
     }
 }
 
