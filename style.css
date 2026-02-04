@@ -862,7 +862,7 @@ body {
 .news-image {
     max-width: 500px;
     width: 100%;
-    box-shadow: 0 0.5rem 1rem rgba(160, 144, 144, 0.3);
+    box-shadow: 0 0.2rem 1rem rgba(160, 144, 144, 0.7);
 }
 
 
